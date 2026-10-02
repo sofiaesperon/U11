@@ -1,5 +1,9 @@
-let listadeSuper = ["manzanas", "pan", "leche", "huevos", "arroz", "frijoles", 
-"carne", "pasta", "verduras", "frutas"];
-console.log("Lista de supermercado:", listadeSuper.length);
-listadeSuper.push("yogur");
-console.log("Lista de supermercado después de agregar yogur:", listadeSuper.length);
+let listadeSuper = []; 
+listadesuper[0] = "Leche";
+listadesuper[1] = "Huevos";
+listadesuper[2] = "Pan";
+
+console.log("Primer elemento" + listadeSuper[0]);
+
+let ultimoElemento = listadeSuper.length - 1;
+console.log("Último elemento: " + listadeSuper[ultimoElemento]);
