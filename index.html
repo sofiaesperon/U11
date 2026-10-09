@@ -3,15 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Supermercado</title>
+    <meta name="theme-color" content="#f4f3ec">
+    <title>Mi lista de compras</title>
     <link rel="stylesheet" href="style.css">
+    <script src="lista.js" defer></script>
 </head>
 <body>
-    <main class="lista-card">
-        <p class="etiqueta">ORGANIZÁ TUS COMPRAS</p>
-        <h1>Lista de Supermercado</h1>
-        <p class="descripcion">Todo lo que necesitás, en un solo lugar.</p>
+    <main class="app">
+        <section class="lista-card" aria-labelledby="titulo">
+            <header class="encabezado">
+                <div class="marca" aria-hidden="true">
+                    <svg viewBox="0 0 48 48" fill="none">
+                        <path d="M10 18h28l-3 22H13l-3-22Z" fill="currentColor" opacity=".16"/>
+                        <path d="M10 18h28l-3 22H13l-3-22ZM18 19v-5a6 6 0 0 1 12 0v5M17 25v8m14-8v8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <p class="etiqueta">TU COMPRA, MÁS SIMPLE</p>
+                <h1 id="titulo">Lista de compras</h1>
+                <p class="descripcion">Anotá lo que necesitás y disfrutá de comprar sin olvidos.</p>
+            </header>
+
+            <form class="formulario" id="formulario">
+                <label class="sr-only" for="nuevo-item">¿Qué necesitás comprar?</label>
+                <input id="nuevo-item" name="item" type="text" placeholder="¿Qué necesitás comprar?" autocomplete="off" required>
+                <button class="boton-agregar" type="submit">
+                    <span aria-hidden="true">+</span>
+                    Agregar
+                </button>
+            </form>
+
+            <section class="contenido-lista" aria-labelledby="titulo-lista">
+                <div class="lista-cabecera">
+                    <h2 id="titulo-lista">Tu lista</h2>
+                    <span class="contador" id="contador" aria-live="polite">0 productos</span>
+                </div>
+                <ul class="items" id="items" aria-live="polite"></ul>
+                <p class="estado-vacio" id="estado-vacio" hidden>
+                    Tu lista está vacía. Agregá tu primer producto arriba.
+                </p>
+            </section>
+
+            <footer class="pie">
+                <span class="punto" aria-hidden="true"></span>
+                Un paso a la vez, una compra mejor.
+            </footer>
+        </section>
+        <p class="nota">Hecha para que no te olvides de nada.</p>
     </main>
-    <script src="lista.js"></script>
 </body>
 </html>

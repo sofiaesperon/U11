@@ -1,88 +1,341 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap");
+
+:root {
+    color-scheme: light;
+    font-family: "DM Sans", "Trebuchet MS", sans-serif;
+    color: #253d31;
+    background: #f4f3ec;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
 * {
-	box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
-	min-height: 100vh;
-	margin: 0;
-	display: grid;
-	place-items: center;
-	padding: 24px;
-	overflow: hidden;
-	color: #173b2a;
-	font-family: "Trebuchet MS", Arial, sans-serif;
-	background:
-		radial-gradient(ellipse at 12% 18%, rgba(255, 255, 255, 0.72) 0 2%, transparent 2.5%),
-		radial-gradient(ellipse at 86% 78%, rgba(255, 255, 255, 0.55) 0 3%, transparent 3.5%),
-		radial-gradient(ellipse at 90% 12%, rgba(177, 216, 145, 0.55), transparent 28%),
-		radial-gradient(ellipse at 8% 88%, rgba(250, 205, 125, 0.42), transparent 30%),
-		linear-gradient(135deg, #e6f4df 0%, #f8f5df 52%, #d9efdc 100%);
+    min-width: 320px;
+    min-height: 100vh;
+    margin: 0;
+    background:
+        radial-gradient(ellipse at 8% 12%, rgba(220, 231, 204, 0.72), transparent 34%),
+        radial-gradient(ellipse at 92% 88%, rgba(245, 221, 185, 0.62), transparent 34%),
+        #f4f3ec;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+.app {
+    display: grid;
+    min-height: 100vh;
+    place-content: center;
+    justify-items: center;
+    gap: 18px;
+    padding: 48px 20px 32px;
 }
 
 .lista-card {
-	position: relative;
-	width: min(100%, 680px);
-	padding: clamp(40px, 8vw, 76px) 28px;
-	overflow: hidden;
-	text-align: center;
-	background: rgba(255, 255, 249, 0.78);
-	border: 1px solid rgba(255, 255, 255, 0.9);
-	border-radius: 32px;
-	box-shadow: 0 24px 70px rgba(42, 83, 53, 0.15), 0 4px 14px rgba(42, 83, 53, 0.06);
-	backdrop-filter: blur(12px);
+    width: min(100%, 560px);
+    padding: clamp(28px, 6vw, 52px);
+    overflow: hidden;
+    background: rgba(255, 255, 251, 0.92);
+    border: 1px solid rgba(255, 255, 255, 0.94);
+    border-radius: 28px;
+    box-shadow: 0 28px 80px rgba(50, 67, 45, 0.12), 0 3px 12px rgba(50, 67, 45, 0.04);
 }
 
-.lista-card::before,
-.lista-card::after {
-	position: absolute;
-	z-index: -1;
-	width: 190px;
-	height: 190px;
-	content: "";
-	background: linear-gradient(145deg, rgba(123, 180, 105, 0.24), rgba(214, 234, 165, 0.08));
-	border-radius: 65% 35% 58% 42%;
-	transform: rotate(-28deg);
+.encabezado {
+    text-align: center;
 }
 
-.lista-card::before {
-	top: -112px;
-	left: -72px;
+.marca {
+    display: grid;
+    width: 58px;
+    height: 58px;
+    margin: 0 auto 20px;
+    place-items: center;
+    color: #477451;
+    background: #eaf1e3;
+    border: 1px solid #dce8d4;
+    border-radius: 20px;
+    transform: rotate(-5deg);
 }
 
-.lista-card::after {
-	right: -84px;
-	bottom: -126px;
-	width: 240px;
-	height: 240px;
-	transform: rotate(35deg);
+.marca svg {
+    width: 34px;
+    height: 34px;
+    transform: rotate(5deg);
 }
 
 .etiqueta {
-	margin: 0 0 14px;
-	color: #668c52;
-	font-size: 0.75rem;
-	font-weight: 800;
-	letter-spacing: 0.2em;
+    margin: 0 0 10px;
+    color: #718764;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
 }
 
 h1 {
-	margin: 0;
-	color: #214b32;
-	font-family: Georgia, "Times New Roman", serif;
-	font-size: clamp(2.2rem, 7vw, 4.2rem);
-	font-weight: 700;
-	letter-spacing: -0.055em;
-	line-height: 1.08;
+    margin: 0;
+    color: #294734;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(2.1rem, 7vw, 3.15rem);
+    letter-spacing: -0.045em;
+    line-height: 1.12;
 }
 
 .descripcion {
-	margin: 18px 0 0;
-	color: #66806b;
-	font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+    max-width: 350px;
+    margin: 13px auto 0;
+    color: #778176;
+    font-size: 0.94rem;
+    line-height: 1.6;
+}
+
+.formulario {
+    display: flex;
+    gap: 10px;
+    margin-top: 32px;
+}
+
+.formulario input {
+    width: 100%;
+    min-width: 0;
+    padding: 14px 16px;
+    color: #2e4033;
+    background: #f8f8f3;
+    border: 1px solid #e5e8de;
+    border-radius: 13px;
+    outline: none;
+    transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.formulario input::placeholder {
+    color: #9aa194;
+}
+
+.formulario input:focus {
+    border-color: #7ca47b;
+    box-shadow: 0 0 0 4px rgba(109, 153, 108, 0.14);
+}
+
+.boton-agregar {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 0 17px;
+    color: white;
+    font-weight: 700;
+    background: #477451;
+    border: 0;
+    border-radius: 13px;
+    cursor: pointer;
+    transition: background 160ms ease, transform 160ms ease;
+}
+
+.boton-agregar:hover {
+    background: #365f40;
+    transform: translateY(-1px);
+}
+
+.boton-agregar:focus-visible,
+.boton-borrar:focus-visible {
+    outline: 3px solid #a9c69c;
+    outline-offset: 3px;
+}
+
+.boton-agregar span {
+    font-size: 1.35rem;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.contenido-lista {
+    margin-top: 33px;
+}
+
+.lista-cabecera {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding-bottom: 13px;
+    border-bottom: 1px solid #e9ebe3;
+}
+
+.lista-cabecera h2 {
+    margin: 0;
+    color: #344a38;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.contador {
+    padding: 5px 10px;
+    color: #66805e;
+    font-size: 0.76rem;
+    font-weight: 700;
+    background: #edf3e8;
+    border-radius: 999px;
+}
+
+.items {
+    display: grid;
+    gap: 8px;
+    margin: 12px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.item {
+    display: flex;
+    min-height: 52px;
+    align-items: center;
+    gap: 13px;
+    padding: 8px 8px 8px 14px;
+    background: #fafaf6;
+    border: 1px solid #eef0e9;
+    border-radius: 12px;
+    animation: aparecer 180ms ease-out;
+}
+
+.item-numero {
+    display: grid;
+    width: 27px;
+    height: 27px;
+    flex: 0 0 auto;
+    place-items: center;
+    color: #6e8662;
+    font-size: 0.76rem;
+    font-weight: 700;
+    background: #edf2e8;
+    border-radius: 9px;
+}
+
+.item-nombre {
+    flex: 1;
+    overflow-wrap: anywhere;
+    color: #354438;
+    font-size: 0.93rem;
+}
+
+.boton-borrar {
+    display: grid;
+    width: 34px;
+    height: 34px;
+    flex: 0 0 auto;
+    place-items: center;
+    color: #a2766c;
+    background: transparent;
+    border: 0;
+    border-radius: 9px;
+    cursor: pointer;
+    transition: color 160ms ease, background 160ms ease;
+}
+
+.boton-borrar:hover {
+    color: #9b4c3f;
+    background: #f8eae5;
+}
+
+.boton-borrar svg {
+    width: 17px;
+    height: 17px;
+}
+
+.estado-vacio {
+    margin: 17px 0 0;
+    padding: 20px 16px;
+    color: #858d80;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    text-align: center;
+    background: #fafaf6;
+    border: 1px dashed #dfe5d9;
+    border-radius: 12px;
+}
+
+.pie {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 28px;
+    color: #91988c;
+    font-size: 0.76rem;
+}
+
+.punto {
+    width: 7px;
+    height: 7px;
+    background: #9db38b;
+    border-radius: 50%;
+}
+
+.nota {
+    margin: 0;
+    color: #87907f;
+    font-size: 0.78rem;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @media (max-width: 480px) {
-	.lista-card {
-		border-radius: 24px;
-	}
+    .app {
+        place-content: start center;
+        padding: 24px 14px;
+    }
+
+    .lista-card {
+        padding: 30px 21px;
+        border-radius: 23px;
+    }
+
+    .formulario {
+        gap: 8px;
+        margin-top: 27px;
+    }
+
+    .boton-agregar {
+        gap: 5px;
+        padding: 0 12px;
+        font-size: 0.88rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
 }
